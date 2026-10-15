@@ -329,3 +329,156 @@ After a couple iterations we successfully completed a working prototype of the d
 
 <img width="408" height="528" alt="slide 73  (21)" src="https://github.com/user-attachments/assets/f1e0d0ef-702e-4373-8a56-0ed06c887169" />
 
+```python
+def loadDunk():
+   # Loads Ring Into Dunk [R1]
+   dunker.set_velocity(75, PERCENT)
+   dunker.spin_to_position(dunk_mid_pos, DEGREES)
+   conveyor.spin(FORWARD)
+   intake.spin(FORWARD)
+   optical_2.set_light(LedStateType.ON)
+   c = 0
+   while not (optical_2.is_near_object() and optical_2.color() == Color.RED):
+      
+       if c > 600 or killProcesses:
+           return
+       wait(5, MSEC)
+       c+=1
+   optical_2.set_light(LedStateType.OFF)
+   wait(0.455, SECONDS)
+   conveyor.stop()
+   intake.stop()
+   dunker.set_velocity(30, PERCENT)
+   dunker.spin_to_position(10, DEGREES)
+   conveyor.set_velocity(30, PERCENT)
+   conveyor.spin(REVERSE)
+   optical_2.set_light(LedStateType.ON)
+   c=0
+   while not (optical_2.is_near_object() and (optical_2.color() == Color.RED or optical_2.color()==Color.YELLOW)):
+       if killProcesses or c > 40000:
+           optical_2.set_light(LedStateType.OFF)
+           return
+       wait(5, MSEC)
+       c+=1
+  
+   optical_2.set_light(LedStateType.OFF)
+   wait(0.1, SECONDS)
+
+   conveyor.stop()
+   conveyor.set_velocity(75, PERCENT)
+```
+
+March 11, 2025
+
+We redid the dunker area that makes it work more efficiently as shown by the picture as well as the code. We continued refining our 3D-printed gripper, experimenting with different designs to maximize its effectiveness. Our initial tests revealed a major flaw: the gripper lacked a horizontal surface to rest on, which caused excessive force on the arm when lifting objects.
+
+To address this, we redesigned the gripper to include a more stable resting position, allowing it to distribute force more evenly. Additionally, we examined ways to further stabilize the intake system to prevent bending and ensure that all components remained structurally sound during operation. Although today’s modifications showed some improvement, further adjustments will be needed to achieve a fully optimized design.
+
+```python
+def finishDunk():
+   # Activates Dunk Mechanic [R2]
+   dunker.set_velocity(100, PERCENT)
+   dunker.spin_to_position(900, DEGREES)
+   wait(1, SECONDS)
+   if killProcesses:
+       return
+   dunker.set_velocity(50, PERCENT)
+   dunker.spin_to_position(10, DEGREES)
+   dunker.stop()
+   dunker.set_velocity(100, PERCENT)
+```
+
+<img width="408" height="528" alt="slide 73  (22)" src="https://github.com/user-attachments/assets/6428131e-f59f-467a-9c0f-63dee7e483d8" />
+
+March 14, 2025
+
+Our primary focus today was on still iterating the back grip mechanism. Through multiple tests, we experimented with different configurations to determine the most effective design for gripping and lifting the mobile goal.
+
+We tested several variations of the gripping arms, making slight modifications to the shape, grip material, and pressure distribution. While some of these adjustments led to minor improvements, none of the configurations fully resolved the inconsistencies we were experiencing.
+
+As a result, we concluded that a different approach might be necessary, and we plan to explore alternative lifting mechanisms in the coming days.
+
+<img width="816" height="1056" alt="slide 73  (23)" src="https://github.com/user-attachments/assets/c41db48c-71aa-4524-ba63-de50b21bc56b" />
+
+March 17, 2025
+
+After multiple failed attempts with the back grip mechanism, we decided to scrap the idea entirely. Instead, we brainstormed a new two-arm lifting mechanism that would allow the robot to lower its arms and pick up the mobile goal more reliably.
+
+This new design concept aimed to improve stability while reducing strain on the motors. By lowering the arms onto the mobile goal before lifting, we hoped to create a more secure and controlled movement.
+
+We plan to prototype this mechanism next and determine if it offers a viable solution to our gripping issues.
+
+March 19, 2025
+
+After successfully prototyping the back lift mechanism, which replaces the previous gripping system, this new design features two arms that lower onto the mobile goal before lifting, allowing for a more stable grip.
+
+Initial tests showed improved control and reduced slippage, but the mechanism still required some refinements to enhance efficiency. Specifically, we need to adjust the pressure applied by the arms to ensure they hold the mobile goal securely without excessive force.
+
+Moving forward, we will work on fine-tuning the lift mechanism and testing its reliability under different game conditions.
+
+```python
+def init_back_lift():
+   # Back Lift Initialization [Y]
+   global lift_home_pos, lift_up
+   lift_up = True
+   back_lift_left.spin(REVERSE)
+   back_lift_right.spin(REVERSE)
+
+   while not (left_bumper.pressing() or right_bumper.pressing()):
+       wait(1, MSEC)
+   if (left_bumper.pressing()):
+       back_lift_left.stop()
+       while not right_bumper.pressing():
+           wait(1, MSEC)
+       back_lift_right.stop()
+   else:      
+       back_lift_right.stop()
+       while not left_bumper.pressing():
+           wait(1, MSEC)
+       back_lift_left.stop()
+   back_lift_right.set_position(back_lift_left.position(DEGREES)-offset, DEGREES)
+   back_lift = MotorGroup(back_lift_left, back_lift_right)
+   lift_home_pos = back_lift.position()
+
+def toggle_back_lift():
+   # Toggle Grip on Mobile Goal [L2]
+   global lift_up
+   if lift_up:
+       lift_up = False
+       back_lift.spin_to_position(lift_home_pos+lift_down_pos, DEGREES, wait=True)
+   else:
+       lift_up = True
+       back_lift.spin_to_position(lift_home_pos+lift_up_pos, DEGREES, wait = True)
+   brain.screen.clear_screen()
+   brain.screen.set_cursor(1,1)
+
+   brain.screen.print(back_lift.position(DEGREES))
+```
+
+March 21, 2025
+
+With the new back lift mechanism in place, we shifted our focus to the coding aspect of the design. Our goal was to integrate the lift system into the robot’s autonomous and driver control modes, ensuring smooth operation.
+
+We ran multiple test sequences to determine how well the lift functioned in practical applications. Some issues arose with timing and motor synchronization, but overall, the system performed better than expected.
+
+We added rotational sensors to detect if the rotation of one side arm is higher than the other, then if so, adjust the higher arm to match the other side.
+
+# Finalizing
+
+March 25, 2025
+
+Today, we made critical adjustments to prevent interference between the sprocket and other moving parts. We identified that improper spacing between the sprocket and wheels caused rubbing issues, which affected the drivetrain overall efficiency.
+
+By carefully modifying the spacing, we eliminated unnecessary friction and improved the robot’s movement. This also helped prevent excessive wear on the drivetrain components, which would have been a major issue in long-term performance.
+
+With these mechanical fixes complete, we will now focus on optimizing the intake system and making final refinements to the autonomous programming.
+
+March 27, 2025
+
+With about 2 days before our competition, we focused on finalizing the autonomous code and playing around with the robot testing if it will hold up to the practical reality of a competition field.
+
+We also did some last minute changes such as adding a barrier to the intake so rings wouldn’t get caught and get stuck, jamming out conveyor, adding a reverse conveyor feature, when pressing button B on our controller, the conveyor will rotate backwards, releasing on rings or stakes if caught. We also added another feature button Y that initializes the back lift, in case the arms weren’t even after some time. Finally, button X is our last resort button, which would kill any active functions of the robot just in case something was caught and we couldn’t stop it from other functions.
+
+<img width="816" height="1056" alt="slide 73  (24)" src="https://github.com/user-attachments/assets/99c3554a-87bc-4e8f-89d5-aa56b192de6c" />
+<img width="816" height="1056" alt="slide 73  (25)" src="https://github.com/user-attachments/assets/c09736b5-0677-4cb3-86aa-40ee17866faa" />
+<img width="816" height="1056" alt="slide 73  (26)" src="https://github.com/user-attachments/assets/19a63b24-4ceb-460a-b3bc-4a90547b37cc" />
