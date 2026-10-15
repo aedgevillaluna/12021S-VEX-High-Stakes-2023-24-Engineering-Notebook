@@ -162,7 +162,7 @@ Here are some potential driving setups we are considering:
 <img width="408" height="528" alt="slide 73  (11)" src="https://github.com/user-attachments/assets/c93196e0-ca3b-4605-a05b-9bf0186dd76f" />
 
 # Prototyping Intake
-January 17, 2025
+Date: January 17, 2025
 
 After testing all three options, we settled on using the Tank Drive setup for our controller. This configuration provided the best balance of precision, control, and reliability for our drivetrain. Since each joystick independently controls one side of the drivetrain, it allows for smooth turns and better maneuverability, especially when making fine adjustments.
 
@@ -178,7 +178,7 @@ We started with intake rollers, as we think they provide a good balance of flexi
 
 <img width="408" height="528" alt="slide 73  (12)" src="https://github.com/user-attachments/assets/169c0c84-eab8-4ff6-90ea-4bbee7149601" />
 
-January 21, 2025
+Date: January 21, 2025
 
 After building a prototype of our design, we found out several problems with our prototype:
 
@@ -194,7 +194,7 @@ After experimenting with several different wheel types, we found out that the fl
 
 # Solving the Problems
 
-January 29, 2025
+Date: January 29, 2025
 
 After building a prototype of the back grip, we quickly stumbled across several issues:
   - The intake wouldn’t properly deposit the rings into the conveyor chain
@@ -213,7 +213,7 @@ The reasons why the intake wasn’t working was the following:
 
 <img width="408" height="528" alt="slide 73  (14)" src="https://github.com/user-attachments/assets/e9cc3f81-c6d3-4495-a086-5ab60483efbf" />
 
-January 30,  2025
+Date: January 30,  2025
 
 To solve the intake issue, we first started with the efficiency. Since normally VEX plates were too thick when being stacked, we had to get creative and we first started with a 3D printed part as a test. The reason we made the ramp 3D printable was because it was quick and easy to prototype different designs and print and test them at the same time. After a couple iterations, we settled on a design that looks like this. The black part you see on this sketch shows what the 3D Printed part looks like.
 
@@ -221,7 +221,7 @@ Another good reason to use a 3D printed part such as this is because 3D printed 
 
 <img width="408" height="528" alt="slide 73  (15)" src="https://github.com/user-attachments/assets/e9f9c07b-20d8-4928-8f22-73e072c035a9" />
 
-February 3, 2025
+Date: February 3, 2025
 
 After testing and verifying the new 3D part functions efficiently, we then started to work on the second problem of the intake; the conveyor chain. The problem with our current design is it cannot hold onto the rings without them slipping or bouncing off. 
 
@@ -231,7 +231,7 @@ After adding these to all the sections of the conveyor chain, we were happy with
 
 <img width="408" height="528" alt="slide 73  (16)" src="https://github.com/user-attachments/assets/27b89b5b-1f1e-4d9c-8ffa-b883c6c730b9" />
 
-February 5, 2025
+Date: February 5, 2025
 
 After testing a bunch of other case scenarios, most of the time the ring would get properly picked up by the conveyor.
 
@@ -249,7 +249,7 @@ Ignoring the con for now, we added a prototype that looks like this:
 
 <img width="408" height="528" alt="slide 73  (17)" src="https://github.com/user-attachments/assets/5510d6c1-2b54-4829-b272-548548cd37b9" />
 
-February 10, 2025
+Date: February 10, 2025
 
 After trying to get the new modification to work a couple of times, we thought it was just the gripping arm would be the problem.
 
@@ -260,7 +260,7 @@ The problem with the current gripping arm is it doesn’t grip the mobile goal a
 
 After concluding using the second gripping arm modification for now, we plan to also modify the bar at the rear as we think that could also improve the performance.
 
-February 13, 2025
+Date: February 13, 2025
 
 After modifying the arm, we thought we needed to modify the bar too since it could be the reason the modified gripper doesn’t properly grip.
 
@@ -272,7 +272,7 @@ At the beginning of a Match, each Robot must be smaller than a volume of 18” (
 
 Once we discovered this rule, we quickly had to measure what our length and height of the robot is. Since width was not too much of an issue, we checked for height and length using a tape measure. And as we feared, the robot stood just above 21 inches, and a length measurement of 21 inches, which would immediately get us disqualified if we didn’t fix this issue. 
 
-February 18, 2025
+Date: February 18, 2025
 
 After taking down the robot and making sure pictures were taken to retrace our steps, we remade the robot. 
 
@@ -280,7 +280,7 @@ We think the main issue is coming from the intake that sticks out of the robot, 
 
 We also had to move the wheels, adjust the conveyor chain length, and wiring to ensure efficiency would still remain the same. Changing the wiring meant we moved the brain to a more open side of the robot, in this picture, the right side, and accidentally broke a couple battery holders in the process.
 
-February 21, 2025
+Date: February 21, 2025
 
 After disassembling and reassembling the robot, we finally had the lower part of the robot done. Its length was just underneath 18 inches. To tackle the height part was more interesting. We replaced the two [2 x 2 x 25] L-Channels with two [2 x 2 x 20] L-Channels, which in theory would decrease the robot’s height and allow the robot to mainly get just under 18 inches. We also adjusted the conveyor since the old chain length would not fit, and adjusting the sprockets since changing the sprocket sizes would not change the same ratio. 
 
@@ -288,7 +288,7 @@ We also redid the back grip and bar to accommodate the new height size. The rest
 
 <img width="408" height="528" alt="slide 73  (18)" src="https://github.com/user-attachments/assets/d3e2b63c-393f-4caa-9f12-85d7282bb816" />
 
-February 21, 2025
+Date: February 21, 2025
 
 After disassembling and reassembling the robot, we finally had the lower part of the robot done. Its length was just underneath 18 inches. To tackle the height part was more interesting. We replaced the two [2 x 2 x 25] L-Channels with two [2 x 2 x 20] L-Channels, which in theory would decrease the robot’s height and allow the robot to mainly get just under 18 inches. We also adjusted the conveyor since the old chain length would not fit, and adjusting the sprockets since changing the sprocket sizes would not change the same ratio. 
 
@@ -299,7 +299,7 @@ To tackle this issue, we added wheels at the end of the conveyor. This provided 
 
 # Refining the Details
 
-February 24, 2025
+Date: February 24, 2025
 
 We worked on a back guide to help with alignment when handling the mobile goal. By adding this guide, we aimed to create a more consistent method for securing and controlling the goal during movement.
 
@@ -307,13 +307,13 @@ We also thought of using a parallelogram mechanism that could potentially improv
 
 <img width="408" height="528" alt="slide 73  (19)" src="https://github.com/user-attachments/assets/1e896031-66d2-4579-afa9-06e3e6267276" />
 
-February 28, 2025
+Date: February 28, 2025
 
 We started integrating a 2D intake system to enhance our ring collection mechanism. This new system uses “banana” like ramps that form a ramp that gradually moves the ring into an angle that the conveyor can pick up.
 
 Another key improvement involved refining the inverse ramp mechanism. The goal was to force the stake to tilt at the right angle to improve the robot’s ability to secure and place rings. While the modifications helped, the ramp still required fine-tuning to prevent inconsistencies. This remains a work in progress, and we plan to conduct further testing and adjustments in the coming days.
 
-March 4, 2025
+Date: March 4, 2025
 
 To improve the stability of the mobile goal during lifting, we added a much thicker support bar for the stake to rest on. This addition ensured that the stake remained in place while the gripper mechanism engaged.
 
@@ -321,7 +321,7 @@ We also worked on refining our gripper system, making adjustments to enhance its
 
 <img width="408" height="528" alt="slide 73  (20)" src="https://github.com/user-attachments/assets/431a5633-e849-4b20-a985-6c278e450b03" />
 
-March 7, 2025
+Date: March 7, 2025
 
 We decided to make a dunking mechanism. This idea came out of the blue to add rings into the wall stakes so we can at least get some points if the mobile goals fail. This mechanism works by utilizing gear ratio and speed to provide the efficiency and speed we need to place a ring into the mobile goal, hence the name, dunking.
 
@@ -368,7 +368,7 @@ def loadDunk():
    conveyor.set_velocity(75, PERCENT)
 ```
 
-March 11, 2025
+Date: March 11, 2025
 
 We redid the dunker area that makes it work more efficiently as shown by the picture as well as the code. We continued refining our 3D-printed gripper, experimenting with different designs to maximize its effectiveness. Our initial tests revealed a major flaw: the gripper lacked a horizontal surface to rest on, which caused excessive force on the arm when lifting objects.
 
@@ -390,7 +390,7 @@ def finishDunk():
 
 <img width="408" height="528" alt="slide 73  (22)" src="https://github.com/user-attachments/assets/6428131e-f59f-467a-9c0f-63dee7e483d8" />
 
-March 14, 2025
+Date: March 14, 2025
 
 Our primary focus today was on still iterating the back grip mechanism. Through multiple tests, we experimented with different configurations to determine the most effective design for gripping and lifting the mobile goal.
 
@@ -400,7 +400,7 @@ As a result, we concluded that a different approach might be necessary, and we p
 
 <img width="816" height="1056" alt="slide 73  (23)" src="https://github.com/user-attachments/assets/c41db48c-71aa-4524-ba63-de50b21bc56b" />
 
-March 17, 2025
+Date: March 17, 2025
 
 After multiple failed attempts with the back grip mechanism, we decided to scrap the idea entirely. Instead, we brainstormed a new two-arm lifting mechanism that would allow the robot to lower its arms and pick up the mobile goal more reliably.
 
@@ -408,7 +408,7 @@ This new design concept aimed to improve stability while reducing strain on the 
 
 We plan to prototype this mechanism next and determine if it offers a viable solution to our gripping issues.
 
-March 19, 2025
+Date: March 19, 2025
 
 After successfully prototyping the back lift mechanism, which replaces the previous gripping system, this new design features two arms that lower onto the mobile goal before lifting, allowing for a more stable grip.
 
@@ -455,7 +455,7 @@ def toggle_back_lift():
    brain.screen.print(back_lift.position(DEGREES))
 ```
 
-March 21, 2025
+Date: March 21, 2025
 
 With the new back lift mechanism in place, we shifted our focus to the coding aspect of the design. Our goal was to integrate the lift system into the robot’s autonomous and driver control modes, ensuring smooth operation.
 
@@ -465,7 +465,7 @@ We added rotational sensors to detect if the rotation of one side arm is higher 
 
 # Finalizing
 
-March 25, 2025
+Date: March 25, 2025
 
 Today, we made critical adjustments to prevent interference between the sprocket and other moving parts. We identified that improper spacing between the sprocket and wheels caused rubbing issues, which affected the drivetrain overall efficiency.
 
@@ -473,7 +473,7 @@ By carefully modifying the spacing, we eliminated unnecessary friction and impro
 
 With these mechanical fixes complete, we will now focus on optimizing the intake system and making final refinements to the autonomous programming.
 
-March 27, 2025
+Date: March 27, 2025
 
 With about 2 days before our competition, we focused on finalizing the autonomous code and playing around with the robot testing if it will hold up to the practical reality of a competition field.
 
